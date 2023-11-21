@@ -1,0 +1,218 @@
+/* Default default settings */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 200px minmax(auto, 1fr) 200px; /* Left sidebar, main content (first parameter of minmax is the min. width {auto}
+    , and second parameter is max. width {1fr}. If it has extra space, it'll strech and take place equally.), right sidebar */
+    grid-template-rows: auto 1fr auto; /* Header, main content(same as 10th line), footer */
+    min-height: 100vh; /* vh -> viewpoint height */
+    background-color: lightgrey;
+  }
+  
+  header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    grid-column: 1 / -1; /* Full width */
+  }
+  header {
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+  header,
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-left img {
+    width: 150px;
+    height: auto;
+    padding-left: 20px;
+  }
+  
+  .header-right p {
+    margin: 0;
+    padding-right: 20px;
+  }
+  
+  .main-content {
+    grid-column: 2 / 3; /* Main content is just one column */
+    grid-row: 2 / 3; /* Main content is just one row */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 80px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    max-width: 800px; /* Maximum width of content */
+  }
+
+  .character {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    color: darkred;
+  }
+  
+  .character img {
+    width: 200px; 
+    height: auto;
+    margin-right: 10px;
+    border: 2px solid blanchedalmond; /* blanchedalmond color for border line */
+    padding: 2px; /* border line width */
+  }
+  
+  .character p {
+    margin: 0;
+  }
+
+  .description {
+    margin-top: 10px;
+    margin-left: 10px;
+    flex-direction: column;
+  }
+  
+  .description p {
+    margin: 0;
+  }
+  
+  aside {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .sidebar-left,
+  .sidebar-right {
+    background-color: #cc6666;
+    padding: 20px;
+    height: calc(100vh - 120px); /* For full height of the page */
+    position: fixed;
+    top: 80px;
+    width: 200px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column; /* Design the boxes vertically */
+    align-items: center;
+  }
+
+  .sidebar-left {
+    left: 0;
+  }
+  .leftsb-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 2px solid #990000; 
+    background-color: #F5D0A9;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .leftsb-box img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border: 2px solid goldenrod;
+    padding: 2px;
+  }
+  
+  .leftsb-box p {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .sidebar-right {
+    right: 0;
+  }
+
+  .rightsb-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border: 2px solid #990000;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .rightsb-box img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border: 2px solid goldenrod;
+    padding: 2px;
+  }
+  
+  .rightsb-box p {
+    margin: 0;
+    text-align: center;
+  }
+
+  footer {
+    grid-column: 1 / -1; /* Footer will be full width with that code line */
+    grid-row: 3 / 4; /* Footer will be bottom with that code line */
+    z-index: 2; /* Footer (and also header) take place front of main content and sidebars */
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-box {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px; /* For round-edge */
+    background-color: grey;
+    display: inline-block;
+  }
+  
+  .footer-box a {
+    color: white;
+    text-decoration: none;
+  }
+
+  footer p {
+    text-align: center;
+    position: fixed;
+    color: rgba(255, 255, 255, 0.5); /* Transparent white color */
+    text-decoration: underline; /* Underlining the text */
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  @media screen and (max-width: 1400px) {
+    /* Web browser's width is more than 1400 pixel, hide the sidebars */
+    .sidebar-left,
+    .sidebar-right {
+      display: none; /* Hide the left and right sidebars */
+    }
+  
+    /* Rearrange the main content */
+    .main-content {
+      grid-column: 1 / -1;
+      padding: 20px;
+    }
+  }
+  
+   
+
+
+  
+  
+  
